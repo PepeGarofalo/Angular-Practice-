@@ -1,0 +1,118 @@
+/* timeline.component.css */
+* {
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    font-size: 3em;
+    text-align: center;
+}
+.title {
+  display: flex;
+  justify-content: center;
+  letter-spacing: 1em;
+  border: solid 2px black;
+  align-items: center;
+  margin-top: 130px;
+  width: 50%;
+  border-radius: 10px;
+}
+
+.background-container {
+  transition: background-color 0.5s ease;
+}
+.timeline {
+    margin: 5em auto;
+    max-width: 34.15em;
+}
+.checkpoint {
+    max-width: 34em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    position: relative;
+}
+.checkpoint div {
+    border: 2px solid black;
+    padding: 1.5em;
+    border-radius: 1em;
+}
+.checkpoint p {
+    line-height: 27px;
+    color: grey;
+}
+.hoover {
+    transition: transform 0.3s ease-in-out;
+}
+
+.hoover:hover {
+    opacity: 0.8;
+}
+
+.checkpoint:nth-child(odd) {
+    border-left: 3px solid #888;
+    padding-left: 3em;
+    transform: translateX(17em);
+}
+.checkpoint:nth-child(even) {
+    border-right: 3px solid #888;
+    padding-right: 3em;
+    transform: translateX(-16.85em);
+}
+.checkpoint:nth-child(odd)::before,
+.checkpoint:nth-child(even)::before {
+    content: '';
+    background: #888;
+    width: 3em;
+    height: 3px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.checkpoint:nth-child(odd)::before {
+    left: 0;
+}
+.checkpoint:nth-child(even)::before {
+    right: 0;
+}
+.checkpoint:nth-child(odd) div::before,
+.checkpoint:nth-child(even) div::before {
+    content: "";
+    background: #fff;
+    box-shadow: 0 0 0.5em #0d71fc;
+    width: 0.8em;
+    height: 0.8em;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+}
+.checkpoint:nth-child(odd) div::before {
+    left: -0.5em;
+}
+.checkpoint:nth-child(even) div::before {
+    right: -0.5em;
+}
+@media screen and (max-width: 1150px) {
+    .timeline {
+        width: 80vw;
+    }
+    .checkpoint {
+        width: 100%;
+        transform: none;
+        padding-left: 0;
+        padding-right: 0;
+        border: none;
+    }
+    .checkpoint::before {
+        width: 3px;
+        height: 4em;
+        top: -2em;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .checkpoint div::before {
+        top: -0.5em;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
